@@ -406,7 +406,7 @@ class Predictor:
             result = get_pseudo_color_map(results[i])
             basename = os.path.basename(imgs_path[i])
             basename, _ = os.path.splitext(basename)
-            basename = f'{basename}.png'
+            basename = f'seg_{basename}.png'
             result.save(os.path.join(self.args.save_dir, basename))
 
 

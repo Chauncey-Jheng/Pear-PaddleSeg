@@ -26,7 +26,7 @@
                             新增图片
                         </label>
                         <button type="button" class="layui-btn layui-btn-normal" id="logo-img">选择文件</button>
-                        <button type="button" class="layui-btn" id="logo-upload-button">开始上传</button>
+                        <button type="button" class="layui-btn" id="logo-upload-button">上传并分割</button>
                     </div>
                 </form>
             </div>
@@ -46,7 +46,8 @@
             , url: "{{ url_for('adminFile.upload_api') }}"
             , auto: false
             , exts: 'jpg|png|gif|bmp|jpeg'
-            , size: 1000
+            , size: 10000
+            , data:{model: 'xxx'}
             , bindAction: '#logo-upload-button'
             , done: function (res) {
                 if (res.success) {

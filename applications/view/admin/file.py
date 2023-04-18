@@ -27,7 +27,7 @@ def table():
     return table_api(data=data, count=count)
 
 
-#   上传
+#   上传页面
 @admin_file.get('/upload')
 @authorize("admin:file:add", log=True)
 def upload():
@@ -44,7 +44,7 @@ def upload_api():
 
         file_url = upload_curd.upload_one(photo=photo, mime=mime)
         res = {
-            "msg": "上传成功",
+            "msg": "上传并分割完成",
             "code": 0,
             "success": True,
             "data":
